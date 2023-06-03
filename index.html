@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>네이버 - 로그인</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 - 로그인</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-  <body>
+<body>
+  <h1 class="logo">
+    <a href="https://www.naver.com/" class="naver-home-link">
+      <img src="./images/logo.png" alt="네이버" srcset="./images/logo.svg" />
+    </a>
+  </h1>
 
-    <script src="./js/form_validation.js"></script>
-  </body>
+  <form action="URL" class="login-form" method="POST">
+    <fieldset>
+      <legend class="a11y">로그인 폼</legend>
+      <div class="login-form-container">
+        <div class="user-email">
+          <label for="userEmail a11y">아이디</label>
+          <input type="email" class="user-email-input" id="userEmail"
+            name="userEmail" placeholder="아이디(이메일)" required
+            aria-invalid="false" aria-describedby="userEmailError"
+            aria-live="assertive" />
+          <span class="error-message" id="userEmailError">아이디는 이메일 형식으로 입력해
+            주세요.</span>
+        </div>
+        <div class="user-password">
+          <label for="userPassword a11y">비밀번호</label>
+          <input type="password" class="user-password-input" id="userPassword"
+            name="userPassword" placeholder="비밀번호" required aria-invalid="false"
+            aria-describedby="userPasswordError" aria-live="polite" />
+          <span class="error-message" id="userPasswordError">비밀번호는 10자리 이상 입력해
+            주세요.</span>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <script src="./js/form_validation.js"></script>
+</body>
 
 </html>

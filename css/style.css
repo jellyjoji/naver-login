@@ -20,10 +20,45 @@ html {
 
 /* 본문 기본 스타일 */
 body {
-  font-family: "Spoqa Han Sans";
+  font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
   background-color: #fff;
-  color: #181818;
+  color: #121212;
   margin: 0;
   font-size: 1.6rem;
+}
+
+/* 공통 스타일 */
+/* 반응형 이미지 */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+.responsive-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* 네이버 로고 */
+.logo {
+  width: clamp(15rem, 51.25%, 23rem);
+  margin: 7rem auto 4.5rem;
+  font-size: 1rem;
+}
+
+.logo img {
+  display: block;
+}
+
+/* 모바일 스타일 */
+@media (max-width: 480px) {
+}
+
+/* 데스크탑 스타일 */
+@media (min-width: 481px) {
+  .logo {
+    width: 23rem;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
 }

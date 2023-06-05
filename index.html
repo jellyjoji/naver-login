@@ -1,17 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>네이버 - 로그인</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 - 로그인</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-  <body>
+<body>
+  <h1 class="logo">
+    <a href="" class="naver-home-link">
+      <!-- srcset : src가 나오지 않을때 svg 를 주겠다 -->
+      <!-- fallback img : src png  화질이 좋지않을때 이것을 보여주겠다  -->
+      <img src="/images/logo.png" alt="naver" srcset="/images/logo.svg" />
+    </a>
+  </h1>
+  <form action="URL" class="login-form" method="POST">
+    <!-- fieldset 는 잘 건들지 않는다  -->
+    <fieldset>
+      <!-- 로그인 폼  -->
+      <!-- 스크린리더에서만 보인다 : sr-only -->
+      <legend class="a11y">로그인폼</legend>
+      <div class="login-form-container">
+        <!-- 의미없이 묶어주는 태그 div -->
+        <div class="user-email">
+          <!-- label 과 input 은 세트 -->
+          <!-- 네이밍 규칙 분리 id 는 카멜 / class 는 케밥 으로 모양만 봐도 구분되도록 정함   -->
+          <label for="userEmail a11y">ID</label>
+          <!-- required 논리속성 필수입력  -->
+          <input type="email" class="user-email-input" id="userEmail" placeholder="아이디(이메일)" required
+            aria-invalid="false" aria-describedby="userEmailError" aria-live="assertive" />
+          <!-- aria-invalid="true" : 값이 유효하지 않을때 / aria-valid="false" : 값이 유효할때 알려주는 안내메세지  * 추후에 js 로 동적으로 toggle 처럼 변경해야함-->
+          <!-- aria-describedby : aria 가 왔을때 독특한 이름이로 설명해줘야함  -->
+          <!-- error 메세지는 span 안에 만들어주기 span은 시멘틱은 아니지만 단락을 묶어주기 위해 사용  -->
+          <!-- aria-live="assertive" : 실시간을 갱신되는 변경사항 나타날시 즉시 감지해서 읽어주는 속성 (읽고 있던거 끊고 바로 알려줌)  -->
+          <span class="error-message" id="userEmailError">아이디는 이메일형식으로 입력해주세요</span>
+        </div>
 
-    <script src="./js/form_validation.js"></script>
-  </body>
+        <!-- 패스워드 -->
+        <div class="user-password">
+          <label for="userPassword" class="a11y">ID</label>
+          <input type="password" class="user-password-input" id="userPassword" placeholder="비밀번호" required
+            aria-invalid="false" aria-describedby="userPasswordError" aria-live="polie" />
+          <!-- aria-live="polie" : 변경사항 나타날시 좀더 정중하게 읽어주는 속성 (읽고 있던거 다 읽고 알려줌)  시각장애인들의 접근성이 높아짐 -->
+          <span class="error-message" id="userPasswordError">비밀번호는 10자리 이상 입력해주세요</span>
+        </div>
+
+        <!-- 체크박스 -->
+        <!-- div 안에 > 로그인 상태 유지 체크박스 & IP 보안 on off 체크박스 묶어놓기 -->
+        <div class="login-state-ip-security-checkbox-wrapper">
+          <div class="login-state">
+            <!-- input 과 label 요소 순서 바껴서 상관없음  -->
+            <!-- name="state" 은 이 이름으로 담아서 서버에 보내겠다. field 에 이 값을 담아 보내겠다. 이 값을 담아갈 그릇  -->
+            <input type="checkbox" class="login-state-checkbox" id="loginState" name="state" />
+            <label for="loginState" class="login-state-label">
+              <!-- 배경을 이용해서 체크박스 이미지 바꿔치기 할 예정 -->
+              <!-- 키보드 스페이스로 접근가능하게 구현할 예정  -->
+              <span class="icon-check"></span>로그인 상태 유지
+            </label>
+          </div>
+          <div class="ip-security-wrapper">
+            <!-- ip 는 링크 / on & off 는 체크박스 -->
+            <!-- target="_blank" 새창이 뜨게 하겠다. 새창을 띄었을때 보안취약한데 새창을 띄었을때 안전해지는 옵션 : rel (relation) no/oppener no/referrer  -->
+            <a href="./ip_security.html" rel="noopener noreferrer" title="IP 보안에 대해" class="ip-security-link"
+              target="_blank">IP 보안</a>
+            <div class="ip-security">
+              <input type="checkbox" class="ip-security-checkbox" name="ip" id="loginIp" />
+              <!-- aria-label="off" 혹은 <span class="a11y">IP 보안설정</span> -->
+              <!-- <span class="a11y">IP 보안설정</span><span>OFF</span> 여기서 자스로 나중에 on off 예정-->
+              <!-- aria-label="IP 보안설정":화면에는 보이지 않지만 읽어주는 속성/ title="IP 보안설정 : 화면에 계속 보여주는 속성   -->
+              <label for="loginIp" class="ip-security-label" aria-label="IP 보안설정" title="IP 보안설정"></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 버튼 -->
+        <button type="submit" class="btn-login">로그인</button>
+      </div>
+
+    </fieldset>
+  </form>
+</body>
 
 </html>

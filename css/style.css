@@ -20,10 +20,106 @@ html {
 
 /* 본문 기본 스타일 */
 body {
-  font-family: "Spoqa Han Sans";
+  font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
   background-color: #fff;
   color: #181818;
   margin: 0;
   font-size: 1.6rem;
+}
+
+/* 여기서 작업 */
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  
+
+}
+img{
+  height: 40px;
+}
+.input{
+  height: 4rem;
+  width: 40rem;
+  padding-left: 2rem;
+  border: 1px solid rgb(217, 217, 217);
+
+}
+button{
+
+}
+.login{
+  background-color: green;
+  border: none;
+  color: white;
+}
+.box{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.check{
+  display: flex;
+  gap: 1rem;
+}
+.mycheckbox input[type="checkbox"] {
+  display: none;
+}
+.mycheckbox input[type="checkbox"]+label {
+   background: url('/images/icon-checked.svg') no-repeat;
+  width:20px;
+  height: 20px;
+}
+.mycheckbox input[type="checkbox"]:checked + label {
+  background: url('/images/icon-unchecked.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+/* 공통 스타일 */
+/* 반응형 이미지  */
+/* 이미지를 100퍼 주고 담은 커네이너 값을 조절하는 방식  */
+/* 고정 값을 줄거냐 유동값을 줄거냐 설계가 들어간게 반응형  */
+img{
+  max-width: 100%;
+  height: auto;
+}
+/* 클래스 나누고 부품화 : svg 에 적용시킬것과 이미지 태그에 적용시킬것 등등 */
+
+/* 네이버로고 */
+.logo{
+  background-color: yellow;
+  width: 16.4rem;
+  /* auto : 좌우 여백이 뷰포트에 따라 유동적으로 할당 */
+  margin: 7rem auto 4.5rem;
+}
+
+.naver-home-link{
+  /* a tag 는 inline 이므로 block 으로 변경  */
+  background-color: blue;
+}
+
+/* 모바일 스타일  */
+@media (max-width: 488px){
+
+}
+/* 480을 기준으로 깨지게  */
+
+/* 데스크탑 스타일  */
+@media(min-width: 481px){
+  .logo{
+    background-color: pink;
+    width: 23rem;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
 }

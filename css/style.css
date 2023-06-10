@@ -342,11 +342,12 @@ body {
     display: block;
     width: 2.8rem;
     text-align: right;
-    color: #03cf5d;
+    color: #aaa;
     font-weight: 700;
   }
 
   .ip-security-checkbox:checked + .ip-security-label::before {
     content: "ON";
+    color: #03cf5d;
   }
 }

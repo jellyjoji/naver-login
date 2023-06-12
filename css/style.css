@@ -431,8 +431,7 @@ body {
     text-decoration: none;
   } */
 
-    /* 웹과 모바일 컨테이너 박스의 순서가 다를 경우
-display flex 의 order 속성을 사용하면 된다. */
+    /* 웹과 모바일 컨테이너 박스의 순서가 다를 경우 display flex 의 order 속성을 사용하면 된다. */
 
     /* width 의 기본값은 auto 이다  */
 

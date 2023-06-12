@@ -11,10 +11,10 @@
 
 <body>
   <h1 class="logo">
-    <a href="" class="naver-home-link">
+    <a href="https://www.naver.com/" class="naver-home-link">
       <!-- srcset : src가 나오지 않을때 svg 를 주겠다 -->
       <!-- fallback img : src png  화질이 좋지않을때 이것을 보여주겠다  -->
-      <img src="/images/logo.png" alt="naver" srcset="/images/logo.svg" />
+      <img src="/images/logo.png" alt="naver" srcset="/images/logo.svg" class="responsive-svg" />
     </a>
   </h1>
   <form action="URL" class="login-form" method="POST">
@@ -30,7 +30,7 @@
           <!-- 네이밍 규칙 분리 id 는 카멜 / class 는 케밥 으로 모양만 봐도 구분되도록 정함   -->
           <label for="userEmail" class="a11y">아이디</label>
           <!-- required 논리속성 필수입력  -->
-          <input type="email" class="user-email-input" id="userEmail" placeholder="아이디(이메일)" required
+          <input type="email" class="user-email-input" id="userEmail" name="userEmail" placeholder="아이디(이메일)" required
             aria-invalid="false" aria-describedby="userEmailError" aria-live="assertive" />
           <!-- aria-invalid="true" : 값이 유효하지 않을때 / aria-valid="false" : 값이 유효할때 알려주는 안내메세지  * 추후에 js 로 동적으로 toggle 처럼 변경해야함-->
           <!-- aria-describedby : aria 가 왔을때 독특한 이름이로 설명해줘야함  -->
@@ -41,7 +41,7 @@
 
         <!-- 패스워드 -->
         <div class="user-password">
-          <label for="userPassword" class="a11y">ID</label>
+          <label for="userPassword" class="a11y">비밀번호</label>
           <input type="password" class="user-password-input" id="userPassword" placeholder="비밀번호" required
             aria-invalid="false" aria-describedby="userPasswordError" aria-live="polie" />
           <!-- aria-live="polie" : 변경사항 나타날시 좀더 정중하게 읽어주는 속성 (읽고 있던거 다 읽고 알려줌)  시각장애인들의 접근성이 높아짐 -->
